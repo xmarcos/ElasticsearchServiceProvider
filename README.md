@@ -1,7 +1,16 @@
-ElasticsearchServiceProvider
-============================
+# ElasticsearchServiceProvider [![Build Status](https://travis-ci.org/xmarcos/ElasticsearchServiceProvider.svg?branch=master)](https://travis-ci.org/xmarcos/ElasticsearchServiceProvider)
 
 A [Silex](https://github.com/silexphp/Silex) Service Provider for the official [Elasticsearch Client](https://github.com/elasticsearch/elasticsearch-php).
+
+## Installation
+
+```json
+{
+    "require": {
+        "xmarcos/elasticsearch-service-provider": "dev-master"
+    }
+}
+```
 
 ## Usage
 
@@ -22,6 +31,6 @@ $app->register(new ElasticsearchServiceProvider(), [
 $app['elasticsearch']->ping();
 ```
 
-##License
+## License
 
 MIT License
