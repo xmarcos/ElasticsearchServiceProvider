@@ -2,6 +2,7 @@
 
 namespace xmarcos\Silex;
 
+use ReflectionClass;
 use Silex\Application;
 use Elasticsearch\Client;
 use PHPUnit_Framework_TestCase;
@@ -24,22 +25,29 @@ class ElasticsearchServiceProviderTest extends PHPUnit_Framework_TestCase
         $this->assertTrue($app['es'] instanceof Client);
     }
 
-    /**
-     * @expectedException Elasticsearch\Common\Exceptions\Curl\CouldNotConnectToHost
-     * @expectedExceptionMessage 127.0.0.1:1234
-     */
     public function testRegisterWithParams()
     {
         $app = new Application();
         $app->register(new ElasticsearchServiceProvider(), [
             'elasticsearch.params' => [
-                'hosts' => [
-                    '127.0.0.1:1234',
-                ],
+                'logging' => true,
+                'logPath' => '/path/to/elasticsearch.log',
+
             ]
         ]);
 
-        $app['elasticsearch']->ping();
+        $reflection = new ReflectionClass($app['elasticsearch']);
+
+        $params = $reflection->getProperty('params');
+        $params->setAccessible(true);
+
+        $pimple = $params->getValue($app['elasticsearch']);
+
+        $this->assertTrue(isset($pimple['logging']));
+        $this->assertTrue(isset($pimple['logPath']));
+
+        $this->assertEquals(true, $pimple['logging']);
+        $this->assertEquals('/path/to/elasticsearch.log', $pimple['logPath']);
     }
 
     /**
