@@ -1,0 +1,40 @@
+{
+    "name": "xmarcos/elasticsearch-service-provider",
+    "description": "A Silex Service Provider for Elasticsearch",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "silex",
+        "search",
+        "elasticsearch"
+    ],
+    "authors": [
+        {
+            "name": "Marcos Sader",
+            "email": "xmarcos@gmail.com"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/xmarcos/ElasticsearchServiceProvider/issues"
+    },
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "require": {
+        "silex/silex"                 : "~1.1",
+        "elasticsearch/elasticsearch" : "~1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit"     : "@stable",
+        "fabpot/php-cs-fixer" : "@stable"
+    },
+    "autoload": {
+        "psr-4": {
+            "xmarcos\\Silex\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "xmarcos\\Silex\\": "tests/"
+        }
+    }
+}
