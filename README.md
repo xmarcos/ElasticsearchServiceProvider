@@ -6,6 +6,7 @@
 [![Latest Version](https://img.shields.io/packagist/v/xmarcos/elasticsearch-service-provider.svg?style=flat-square)](https://packagist.org/packages/xmarcos/elasticsearch-service-provider)
 [![Software License](https://img.shields.io/packagist/l/xmarcos/elasticsearch-service-provider.svg?style=flat-square)](LICENSE)
 [![Total Downloads](https://img.shields.io/packagist/dt/xmarcos/elasticsearch-service-provider.svg?style=flat-square)](https://packagist.org/packages/xmarcos/elasticsearch-service-provider)
+[![SensioLabsInsight](https://insight.sensiolabs.com/projects/c32f1a2e-bd23-41f8-8933-04976e454bd7/mini.png)](https://insight.sensiolabs.com/projects/c32f1a2e-bd23-41f8-8933-04976e454bd7)
 
 A [Silex](https://github.com/silexphp/Silex) Service Provider for the official [Elasticsearch Client](https://github.com/elasticsearch/elasticsearch-php).
 
